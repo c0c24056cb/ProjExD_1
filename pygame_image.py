@@ -22,18 +22,18 @@ def main():
 
         dx , dy = -1, 0
         key_lst = pg.key.get_pressed()#練習10-3
-        tori_rct.move_ip((dx, dy))
         if key_lst[pg.K_UP]:
-            tori_rct.move_ip((0, -1))
+            dy -= 1
         
         if key_lst[pg.K_DOWN]:
-            tori_rct.move_ip((0, +1))
+            dy += 1
 
         if key_lst[pg.K_LEFT]:
-            tori_rct.move_ip((-1, 0))
+            dx -= 1
 
         if key_lst[pg.K_RIGHT]:
-            tori_rct.move_ip((+2, 0))
+            dx += 2
+        tori_rct.move_ip((dx, dy))    
         x = tmr%3200#練習6/9
         screen.blit(bg_img, [-x, 0])#練習6
         screen.blit(bg_img2, [-x + 1600, 0])#練習7
