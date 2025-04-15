@@ -20,7 +20,17 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed()#練習10-3
-        print(key_lst[pg.K_UP])
+        if key_lst[pg.K_UP]:
+            tori_rct.move_ip((0, -1))
+        
+        if key_lst[pg.K_DOWN]:
+            tori_rct.move_ip((0, +1))
+
+        if key_lst[pg.K_LEFT]:
+            tori_rct.move_ip((-1, 0))
+
+        if key_lst[pg.K_RIGHT]:
+            tori_rct.move_ip((+1, 0))
         x = tmr%3200#練習6/9
         screen.blit(bg_img, [-x, 0])#練習6
         screen.blit(bg_img2, [-x + 1600, 0])#練習7
